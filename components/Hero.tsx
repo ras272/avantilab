@@ -1,18 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GLSLHills } from './GLSLHills'
 
 export default function Hero() {
   return (
     <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Fondo GLSL */}
+      {/* Fondo */}
       <div className="absolute inset-0 bg-[#1a1a1a]">
-        <GLSLHills speed={0.3} cameraZ={100} />
-      </div>
-
-      {/* Overlay para legibilidad */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/40 via-transparent to-[#1a1a1a]/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,30,30,0.15)_0%,_transparent_70%)]" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
 
       {/* Gradiente inferior para transición */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF9] to-transparent" />
