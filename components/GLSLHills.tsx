@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import type { Mesh } from 'three'
 
 interface GLSLHillsProps {
   width?: string
@@ -41,7 +42,7 @@ const GLSLHills = ({
         // Plane class
         class Plane {
           uniforms: { time: { type: string; value: number } }
-          mesh: THREE.Mesh
+          mesh: Mesh
           time: number
 
           constructor() {
