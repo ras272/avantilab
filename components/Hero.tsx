@@ -11,10 +11,10 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-50 md:hidden"
         style={{
-          backgroundImage: 'url(/hero.png)',
-          backgroundPosition: 'center calc(100% + 80px)',
+          backgroundImage: 'url(/hero2.png)',
+          backgroundPosition: 'center calc(100% + 220px)',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: '180%',
+          backgroundSize: '100%',
         }}
       />
       {/* Skyline desktop */}
