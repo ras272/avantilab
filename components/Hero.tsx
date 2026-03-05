@@ -4,23 +4,32 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative flex items-center bg-[#FAFAF9] overflow-hidden">
-      {/* Fondo skyline */}
+    <section
+      className="min-h-screen relative flex items-center overflow-hidden bg-[#FAFAF9]"
+    >
+      {/* Skyline mobile */}
       <div
-        className="absolute inset-0 opacity-[0.12]"
+        className="absolute inset-0 opacity-50 md:hidden"
         style={{
           backgroundImage: 'url(/hero.png)',
-          backgroundPosition: 'center bottom',
+          backgroundPosition: 'center calc(100% + 80px)',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundSize: '180%',
+        }}
+      />
+      {/* Skyline desktop */}
+      <div
+        className="absolute inset-0 opacity-50 hidden md:block"
+        style={{
+          backgroundImage: 'url(/hero.png)',
+          backgroundPosition: 'center calc(100% + 380px)',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '80%',
         }}
       />
 
-      {/* Overlay gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF9] via-[#FAFAF9]/50 to-[#FAFAF9]" />
-
       {/* Contenido */}
-      <div className="w-full px-6 py-32">
+      <div className="relative z-10 w-full px-6 py-32">
         <div className="max-w-7xl mx-auto">
           {/* Label */}
           <motion.div
