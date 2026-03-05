@@ -78,7 +78,7 @@ export default function Contacto() {
                   <span className="text-[#1a1a1a]/30 font-mono text-xs uppercase tracking-wider block mb-1">
                     Ubicación
                   </span>
-                  <span className="font-mono text-lg">Buenos Aires, Argentina</span>
+                  <span className="font-mono text-lg">Asunción, Paraguay</span>
                 </div>
               </div>
             </motion.div>

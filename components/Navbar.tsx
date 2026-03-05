@@ -68,7 +68,7 @@ export default function Navbar() {
             </nav>
 
             <div className="absolute bottom-8 left-6 right-6 flex justify-between text-white/40 text-xs font-mono">
-              <span>Buenos Aires, AR</span>
+              <span>Asunción, PY</span>
               <span>hola@avantilab.com</span>
             </div>
           </motion.div>

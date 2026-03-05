@@ -82,7 +82,7 @@ export default function ContactoPage() {
                     <span className="text-[#1a1a1a]/30 font-mono text-xs uppercase tracking-wider block mb-2">
                       Ubicación
                     </span>
-                    <p className="font-mono text-lg">Buenos Aires, Argentina</p>
+                    <p className="font-mono text-lg">Asunción, Paraguay</p>
                     <p className="text-[#1a1a1a]/50 text-sm mt-1">Operamos en todo LATAM</p>
                   </div>
 

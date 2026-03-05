@@ -72,7 +72,7 @@ export default function Footer() {
               hola@avantilab.com
             </a>
             <span className="text-white/40 font-mono text-sm">
-              Buenos Aires, Argentina
+              Asunción, Paraguay
             </span>
           </div>
         </div>
