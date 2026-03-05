@@ -9,6 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#1a1a1a]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,30,30,0.15)_0%,_transparent_70%)]" />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+      </div>
 
       {/* Gradiente inferior para transición */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF9] to-transparent" />
