@@ -5,31 +5,19 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <section className="min-h-screen relative flex items-center bg-[#FAFAF9] overflow-hidden">
-      {/* Fondo topográfico */}
-      <div className="absolute inset-0 opacity-[0.08]">
-        <svg className="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-100 400 Q150 350 300 400 T600 380 T900 420 T1100 400" stroke="#c81e1e" strokeWidth="1.5"/>
-          <path d="M-100 450 Q200 400 350 450 T650 420 T950 470 T1100 450" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 500 Q180 480 320 520 T620 490 T920 530 T1100 500" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 550 Q220 510 380 560 T680 530 T980 570 T1100 550" stroke="#c81e1e" strokeWidth="1.5"/>
-          <path d="M-100 600 Q160 580 300 620 T600 590 T900 630 T1100 600" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 650 Q200 620 360 660 T660 640 T960 680 T1100 650" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 700 Q180 720 340 690 T640 720 T940 700 T1100 720" stroke="#c81e1e" strokeWidth="1.5"/>
-          <path d="M-100 300 Q200 280 400 320 T700 290 T1000 330 T1100 300" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 250 Q150 270 350 240 T650 270 T950 250 T1100 260" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 200 Q180 180 380 210 T680 190 T980 220 T1100 200" stroke="#c81e1e" strokeWidth="1.5"/>
-          <path d="M-100 750 Q220 780 420 750 T720 780 T1020 760 T1100 780" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 800 Q180 820 380 800 T680 830 T980 810 T1100 830" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 850 Q200 830 400 860 T700 840 T1000 870 T1100 850" stroke="#c81e1e" strokeWidth="1.5"/>
-          <path d="M-100 150 Q160 170 360 140 T660 170 T960 150 T1100 170" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 100 Q200 80 400 110 T700 90 T1000 120 T1100 100" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 900 Q180 920 380 900 T680 930 T980 910 T1100 930" stroke="#1a1a1a" strokeWidth="1"/>
-          <path d="M-100 950 Q220 930 420 960 T720 940 T1020 970 T1100 950" stroke="#c81e1e" strokeWidth="1.5"/>
-        </svg>
-      </div>
+      {/* Fondo skyline */}
+      <div
+        className="absolute inset-0 opacity-[0.12]"
+        style={{
+          backgroundImage: 'url(/hero.png)',
+          backgroundPosition: 'center bottom',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      />
 
       {/* Overlay gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF9] via-transparent to-[#FAFAF9]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF9] via-[#FAFAF9]/50 to-[#FAFAF9]" />
 
       {/* Contenido */}
       <div className="w-full px-6 py-32">
