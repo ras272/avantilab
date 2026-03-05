@@ -4,93 +4,108 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="min-h-screen relative flex items-center overflow-hidden">
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-[#1a1a1a]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,30,30,0.15)_0%,_transparent_70%)]" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
+    <section className="min-h-screen relative flex items-center bg-[#FAFAF9] overflow-hidden">
+      {/* Fondo topográfico */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <svg className="w-full h-full" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M-100 400 Q150 350 300 400 T600 380 T900 420 T1100 400" stroke="#c81e1e" strokeWidth="1.5"/>
+          <path d="M-100 450 Q200 400 350 450 T650 420 T950 470 T1100 450" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 500 Q180 480 320 520 T620 490 T920 530 T1100 500" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 550 Q220 510 380 560 T680 530 T980 570 T1100 550" stroke="#c81e1e" strokeWidth="1.5"/>
+          <path d="M-100 600 Q160 580 300 620 T600 590 T900 630 T1100 600" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 650 Q200 620 360 660 T660 640 T960 680 T1100 650" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 700 Q180 720 340 690 T640 720 T940 700 T1100 720" stroke="#c81e1e" strokeWidth="1.5"/>
+          <path d="M-100 300 Q200 280 400 320 T700 290 T1000 330 T1100 300" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 250 Q150 270 350 240 T650 270 T950 250 T1100 260" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 200 Q180 180 380 210 T680 190 T980 220 T1100 200" stroke="#c81e1e" strokeWidth="1.5"/>
+          <path d="M-100 750 Q220 780 420 750 T720 780 T1020 760 T1100 780" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 800 Q180 820 380 800 T680 830 T980 810 T1100 830" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 850 Q200 830 400 860 T700 840 T1000 870 T1100 850" stroke="#c81e1e" strokeWidth="1.5"/>
+          <path d="M-100 150 Q160 170 360 140 T660 170 T960 150 T1100 170" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 100 Q200 80 400 110 T700 90 T1000 120 T1100 100" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 900 Q180 920 380 900 T680 930 T980 910 T1100 930" stroke="#1a1a1a" strokeWidth="1"/>
+          <path d="M-100 950 Q220 930 420 960 T720 940 T1020 970 T1100 950" stroke="#c81e1e" strokeWidth="1.5"/>
+        </svg>
       </div>
 
-      {/* Gradiente inferior para transición */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF9] to-transparent" />
+      {/* Overlay gradiente */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAF9] via-transparent to-[#FAFAF9]" />
 
       {/* Contenido */}
-      <div className="relative z-10 w-full px-6">
+      <div className="w-full px-6 py-32">
         <div className="max-w-7xl mx-auto">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8 flex items-center gap-4"
+            className="mb-12"
           >
-            <span className="w-12 h-px bg-[#c81e1e]" />
-            <span className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase">
+            <span className="text-[#c81e1e] font-mono text-xs tracking-[0.2em] uppercase">
               Comunicación Estratégica
             </span>
           </motion.div>
 
           {/* Headline */}
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
-            >
-              El laboratorio
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
-            >
-              donde la <span className="italic text-[#c81e1e]">estrategia</span>
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h1
-              initial={{ y: 100 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
-            >
-              se convierte en <span className="italic">impacto</span>
-              <span className="text-[#c81e1e]">.</span>
-            </motion.h1>
+          <div className="mb-16">
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
+              >
+                El laboratorio donde
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
+              >
+                la <span className="italic text-[#c81e1e]">estrategia</span> se convierte
+              </motion.h1>
+            </div>
+            <div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
+              >
+                en <span className="italic">impacto</span><span className="text-[#c81e1e]">.</span>
+              </motion.h1>
+            </div>
           </div>
 
-          {/* Subtítulo */}
+          {/* Grid inferior */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+            className="grid md:grid-cols-2 gap-12 items-end"
           >
-            <div className="max-w-lg">
-              <p className="text-white/60 text-base md:text-lg leading-relaxed mb-4">
-                Transformamos ideas en resultados reales a través de comunicación
-                estratégica, creatividad y método.
-              </p>
-              <p className="text-white font-mono text-sm">
-                Avanti Lab: tu objetivo, nuestro plan de acción.
+            <div className="max-w-md">
+              <p className="text-[#1a1a1a]/60 text-lg leading-relaxed">
+                Transformamos ideas en resultados reales a través de comunicación estratégica, creatividad y método.
               </p>
             </div>
 
-            <a
-              href="#servicios"
-              className="group flex items-center gap-4"
-            >
-              <span className="text-white font-mono text-sm border-b border-white/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
-                Descubrí cómo lo hacemos
-              </span>
-              <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                ↓
-              </span>
-            </a>
+            <div className="flex md:justify-end">
+              <a
+                href="#servicios"
+                className="group inline-flex items-center gap-4"
+              >
+                <span className="text-[#1a1a1a] font-mono text-sm border-b border-[#1a1a1a]/20 pb-1 group-hover:border-[#c81e1e] transition-colors">
+                  Descubrí cómo lo hacemos
+                </span>
+                <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                  ↓
+                </span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -100,12 +115,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-5 h-8 border border-white/30 rounded-full flex items-start justify-center p-1"
+          className="w-5 h-8 border border-[#1a1a1a]/20 rounded-full flex items-start justify-center p-1"
         >
           <motion.div
             animate={{ y: [0, 8, 0] }}
