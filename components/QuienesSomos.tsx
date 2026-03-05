@@ -68,7 +68,7 @@ export default function QuienesSomos() {
             {/* Quote */}
             <blockquote className="border-l-2 border-[#c81e1e] pl-6 mb-10">
               <p className="font-mono text-xl md:text-2xl font-light italic text-[#1a1a1a]">
-                "Cada proyecto lo asumimos con cabeza, corazón y disciplina."
+                &ldquo;Cada proyecto lo asumimos con cabeza, corazón y disciplina.&rdquo;
               </p>
             </blockquote>
 
