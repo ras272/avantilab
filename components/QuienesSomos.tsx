@@ -1,0 +1,92 @@
+'use client'
+
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import Link from 'next/link'
+
+export default function QuienesSomos() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
+  return (
+    <section id="nosotros" className="py-32 px-6 relative overflow-hidden" ref={ref}>
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0, x: -100 }}
+        animate={isInView ? { opacity: 0.03, x: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute -left-10 top-1/2 -translate-y-1/2 text-[40vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none"
+      >
+        01
+      </motion.span>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          className="flex items-center gap-4 mb-16"
+        >
+          <span className="w-12 h-px bg-[#c81e1e]" />
+          <span className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase">
+            Quiénes Somos
+          </span>
+        </motion.div>
+
+        <div className="grid md:grid-cols-12 gap-12">
+          {/* Columna izquierda */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="md:col-span-7"
+          >
+            <h2 className="font-mono text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light mb-8">
+              Somos el laboratorio que hace que las{' '}
+              <span className="italic text-[#c81e1e]">cosas pasen</span>.
+            </h2>
+
+            <p className="text-[#1a1a1a]/70 text-lg leading-relaxed mb-6">
+              Avanti Lab es un laboratorio de comunicación estratégica de posicionamiento,
+              donde la ciencia, el pensamiento, la creatividad y la ejecución se unen para
+              generar resultados tangibles.
+            </p>
+
+            <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
+              Somos socios estratégicos que piensan contigo, caminan a tu lado y
+              convierten la comunicación en crecimiento real.
+            </p>
+          </motion.div>
+
+          {/* Columna derecha */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="md:col-span-4 md:col-start-9 flex flex-col justify-between"
+          >
+            {/* Quote */}
+            <blockquote className="border-l-2 border-[#c81e1e] pl-6 mb-10">
+              <p className="font-mono text-xl md:text-2xl font-light italic text-[#1a1a1a]">
+                "Cada proyecto lo asumimos con cabeza, corazón y disciplina."
+              </p>
+            </blockquote>
+
+            {/* CTA */}
+            <Link
+              href="/nosotros"
+              className="group inline-flex items-center gap-4"
+            >
+              <span className="font-mono text-sm border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] group-hover:text-[#c81e1e] transition-colors">
+                Conocenos más
+              </span>
+              <span className="w-10 h-10 rounded-full border border-[#1a1a1a]/20 flex items-center justify-center group-hover:bg-[#c81e1e] group-hover:border-[#c81e1e] group-hover:text-white transition-all duration-300">
+                ↗
+              </span>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
