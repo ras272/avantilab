@@ -13,9 +13,6 @@ export default function Footer() {
         <div className="grid md:grid-cols-12 gap-8 mb-12">
           {/* Logo y tagline */}
           <div className="md:col-span-4">
-            <Link href="/" className="font-sans text-white text-xl mb-4 block">
-              avanti lab
-            </Link>
             <p className="text-white/40 text-sm leading-relaxed">
               Comunicar para cambiar realidades.
             </p>

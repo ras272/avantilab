@@ -100,10 +100,19 @@ export default function Reels() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 onMouseEnter={(e) => e.currentTarget.play()}
                 onMouseLeave={(e) => {
                   e.currentTarget.pause()
                   e.currentTarget.currentTime = 0
+                }}
+                onClick={(e) => {
+                  const video = e.currentTarget
+                  if (video.paused) {
+                    video.play()
+                  } else {
+                    video.pause()
+                  }
                 }}
               />
               {/* Play icon overlay */}
@@ -134,10 +143,19 @@ export default function Reels() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
                 onMouseEnter={(e) => e.currentTarget.play()}
                 onMouseLeave={(e) => {
                   e.currentTarget.pause()
                   e.currentTarget.currentTime = 0
+                }}
+                onClick={(e) => {
+                  const video = e.currentTarget
+                  if (video.paused) {
+                    video.play()
+                  } else {
+                    video.pause()
+                  }
                 }}
               />
               {/* Play icon overlay */}
