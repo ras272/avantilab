@@ -33,7 +33,7 @@ export default function ContactoPage() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#c81e1e] font-mono text-sm mb-6 block"
+              className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase mb-6 block"
             >
               Contacto
             </motion.span>
@@ -42,7 +42,7 @@ export default function ContactoPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-mono text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter font-light text-[#1a1a1a] max-w-5xl"
+              className="text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight font-light text-[#1a1a1a] max-w-5xl"
             >
               Hablemos<span className="text-[#c81e1e]">.</span>
             </motion.h1>
@@ -71,10 +71,24 @@ export default function ContactoPage() {
                       Email
                     </span>
                     <a
-                      href="mailto:hola@avantilab.com"
-                      className="font-mono text-lg hover:text-[#c81e1e] transition-colors"
+                      href="mailto:hola@avanti-lab.com"
+                      className="font-sans text-lg hover:text-[#c81e1e] transition-colors"
                     >
-                      hola@avantilab.com
+                      hola@avanti-lab.com
+                    </a>
+                  </div>
+
+                  <div>
+                    <span className="text-[#1a1a1a]/30 font-mono text-xs uppercase tracking-wider block mb-2">
+                      WhatsApp
+                    </span>
+                    <a
+                      href="https://wa.me/595993330623"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-sans text-lg hover:text-[#c81e1e] transition-colors"
+                    >
+                      +595 993 330623
                     </a>
                   </div>
 
@@ -82,7 +96,7 @@ export default function ContactoPage() {
                     <span className="text-[#1a1a1a]/30 font-mono text-xs uppercase tracking-wider block mb-2">
                       Ubicación
                     </span>
-                    <p className="font-mono text-lg">Asunción, Paraguay</p>
+                    <p className="font-sans text-lg">Asunción, Paraguay</p>
                     <p className="text-[#1a1a1a]/50 text-sm mt-1">Operamos en todo LATAM</p>
                   </div>
 
@@ -92,10 +106,10 @@ export default function ContactoPage() {
                     </span>
                     <div className="flex gap-4">
                       <a
-                        href="https://instagram.com/avantilab"
+                        href="https://instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-sm hover:text-[#c81e1e] transition-colors"
+                        className="font-sans text-sm hover:text-[#c81e1e] transition-colors"
                       >
                         Instagram
                       </a>
@@ -103,7 +117,7 @@ export default function ContactoPage() {
                         href="https://linkedin.com/company/avantilab"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-sm hover:text-[#c81e1e] transition-colors"
+                        className="font-sans text-sm hover:text-[#c81e1e] transition-colors"
                       >
                         LinkedIn
                       </a>
@@ -118,7 +132,7 @@ export default function ContactoPage() {
                   </p>
                   <button
                     onClick={openCalendly}
-                    className="group inline-flex items-center gap-4 font-mono text-sm"
+                    className="group inline-flex items-center gap-4 font-sans text-sm"
                   >
                     <span className="border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
                       Agendar reunión
@@ -148,7 +162,7 @@ export default function ContactoPage() {
                       required
                       value={formData.nombre}
                       onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-mono text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
+                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-sans text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -162,7 +176,7 @@ export default function ContactoPage() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-mono text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
+                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-sans text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
                       placeholder="tu@email.com"
                     />
                   </div>
@@ -175,7 +189,7 @@ export default function ContactoPage() {
                       type="text"
                       value={formData.empresa}
                       onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-mono text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
+                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-sans text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors"
                       placeholder="Tu empresa"
                     />
                   </div>
@@ -189,16 +203,17 @@ export default function ContactoPage() {
                       rows={4}
                       value={formData.mensaje}
                       onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
-                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-mono text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors resize-none"
+                      className="w-full bg-transparent border-b border-[#1a1a1a]/20 py-3 font-sans text-lg placeholder:text-[#1a1a1a]/20 focus:outline-none focus:border-[#c81e1e] transition-colors resize-none"
                       placeholder="Contanos sobre tu proyecto..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#1a1a1a] text-white font-mono text-sm uppercase tracking-wider hover:bg-[#c81e1e] transition-colors"
+                    className="group w-full py-4 px-6 bg-[#1a1a1a] text-white font-sans text-sm uppercase tracking-wider hover:bg-[#c81e1e] transition-all duration-300 flex items-center justify-center gap-3 hover:gap-4"
                   >
                     Enviar mensaje
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </button>
                 </form>
               </motion.div>

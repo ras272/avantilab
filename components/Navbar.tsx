@@ -17,21 +17,46 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Navbar fija - mínima */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex items-center justify-between mix-blend-difference">
-        <Link href="/" className="text-white text-sm font-mono tracking-tight">
-          avanti lab
-        </Link>
+      {/* Navbar institucional */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#1a1a1a]/5">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/">
+            <img src="/logo.png" alt="Avanti Lab" className="h-36 w-auto -my-12" />
+          </Link>
 
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="text-white text-sm font-mono tracking-tight hover:opacity-60 transition-opacity"
-        >
-          menú
-        </button>
+          {/* Links desktop */}
+          <div className="hidden md:flex items-center gap-10">
+            {links.slice(1, -1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group relative text-[#162139] text-base font-sans font-medium py-1"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#c81e1e] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
+            <Link
+              href="/contacto"
+              className="group bg-[#c81e1e] text-white text-sm font-sans px-6 py-2.5 rounded-full hover:bg-[#a01818] hover:shadow-lg hover:shadow-[#c81e1e]/25 transition-all duration-300 flex items-center gap-2"
+            >
+              Hablemos
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+            </Link>
+          </div>
+
+          {/* Menu button mobile */}
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="md:hidden text-[#162139] text-base font-sans font-medium"
+          >
+            menú
+          </button>
+        </div>
       </nav>
 
-      {/* Menu fullscreen */}
+      {/* Menu fullscreen mobile */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -43,7 +68,7 @@ export default function Navbar() {
           >
             <button
               onClick={() => setMenuOpen(false)}
-              className="absolute top-5 right-6 text-white/60 text-sm font-mono hover:text-white transition-colors"
+              className="absolute top-5 right-6 text-white/60 text-sm font-sans hover:text-white transition-colors"
             >
               cerrar
             </button>
@@ -59,7 +84,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className="text-white text-5xl md:text-7xl font-mono font-light hover:text-[#c81e1e] transition-colors duration-200"
+                    className="text-white text-5xl md:text-7xl font-sans font-light hover:text-[#c81e1e] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -69,7 +94,7 @@ export default function Navbar() {
 
             <div className="absolute bottom-8 left-6 right-6 flex justify-between text-white/40 text-xs font-mono">
               <span>Asunción, PY</span>
-              <span>hola@avantilab.com</span>
+              <span>hola@avanti-lab.com</span>
             </div>
           </motion.div>
         )}

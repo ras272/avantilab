@@ -53,7 +53,7 @@ export default function Casos() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
-              className="font-mono text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light"
+              className="font-sans text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light"
             >
               Resultados que hablan
               <br />
@@ -68,7 +68,7 @@ export default function Casos() {
           >
             <Link
               href="/trabajo"
-              className="group inline-flex items-center gap-3 text-white font-mono text-sm"
+              className="group inline-flex items-center gap-3 text-white font-sans text-sm"
             >
               <span className="border-b border-white/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
                 Ver todos
@@ -105,28 +105,28 @@ export default function Casos() {
               {/* Card con resultado destacado */}
               <div className="aspect-[3/4] bg-white/5 relative overflow-hidden mb-6 p-6 flex flex-col justify-between hover:bg-white/10 transition-colors duration-300">
                 {/* Categoría */}
-                <span className="text-[#c81e1e] font-mono text-xs uppercase tracking-wider">
+                <span className="text-[#c81e1e] font-sans text-xs uppercase tracking-wider">
                   {caso.category}
                 </span>
 
                 {/* Resultado grande */}
                 <div>
-                  <span className="font-mono text-6xl md:text-7xl font-light text-white block leading-none">
+                  <span className="font-sans text-6xl md:text-7xl font-light text-white block leading-none">
                     {caso.result}
                   </span>
-                  <span className="text-white/50 font-mono text-xs uppercase tracking-wider mt-2 block">
+                  <span className="text-white/50 font-sans text-xs uppercase tracking-wider mt-2 block">
                     {caso.resultLabel}
                   </span>
                 </div>
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-[#c81e1e] flex items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300">
-                  <span className="text-white font-mono text-sm">Ver caso ↗</span>
+                  <span className="text-white font-sans text-sm">Ver caso ↗</span>
                 </div>
               </div>
 
               {/* Título */}
-              <h3 className="font-mono text-white text-lg md:text-xl font-light group-hover:text-[#c81e1e] transition-colors duration-300">
+              <h3 className="font-sans text-white text-lg md:text-xl font-light group-hover:text-[#c81e1e] transition-colors duration-300">
                 {caso.title}
               </h3>
             </motion.article>

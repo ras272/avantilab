@@ -46,7 +46,7 @@ export default function Hero() {
             className="mb-8 flex items-center gap-4"
           >
             <span className="w-12 h-px bg-[#c81e1e]" />
-            <span className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase">
+            <span className="text-[#c81e1e] font-sans text-xs tracking-[0.3em] uppercase">
               Comunicación Estratégica
             </span>
           </motion.div>
@@ -57,7 +57,7 @@ export default function Hero() {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
+              className="font-sans text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
             >
               El laboratorio
             </motion.h1>
@@ -67,7 +67,7 @@ export default function Hero() {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
+              className="font-sans text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
             >
               donde la <span className="italic text-[#c81e1e]">estrategia</span>
             </motion.h1>
@@ -77,7 +77,7 @@ export default function Hero() {
               initial={{ y: 100 }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-mono text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
+              className="font-sans text-white text-[10vw] md:text-[7vw] leading-[0.95] tracking-tighter font-light"
             >
               se convierte en <span className="italic">impacto</span><span className="text-[#c81e1e]">.</span>
             </motion.h1>
@@ -95,7 +95,7 @@ export default function Hero() {
                 Transformamos ideas en resultados reales a través de comunicación
                 estratégica, creatividad y método.
               </p>
-              <p className="text-white font-mono text-sm">
+              <p className="text-white font-sans text-sm">
                 Avanti Lab: tu objetivo, nuestro plan de acción.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function Hero() {
               href="#servicios"
               className="group flex items-center gap-4"
             >
-              <span className="text-white font-mono text-sm border-b border-white/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
+              <span className="text-white font-sans text-sm border-b border-white/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
                 Descubrí cómo lo hacemos
               </span>
               <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">

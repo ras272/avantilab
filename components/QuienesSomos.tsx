@@ -41,20 +41,14 @@ export default function QuienesSomos() {
             transition={{ duration: 0.8 }}
             className="md:col-span-7"
           >
-            <h2 className="font-mono text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light mb-8">
-              Somos el laboratorio que hace que las{' '}
+            <h2 className="font-sans text-4xl md:text-5xl lg:text-7xl leading-[1.1] tracking-tight font-light mb-10">
+              Hacemos que las{' '}
               <span className="italic text-[#c81e1e]">cosas pasen</span>.
             </h2>
 
-            <p className="text-[#1a1a1a]/70 text-lg leading-relaxed mb-6">
-              Avanti Lab es un laboratorio de comunicación estratégica de posicionamiento,
-              donde la ciencia, el pensamiento, la creatividad y la ejecución se unen para
-              generar resultados tangibles.
-            </p>
-
-            <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
-              Somos socios estratégicos que piensan contigo, caminan a tu lado y
-              convierten la comunicación en crecimiento real.
+            <p className="text-[#1a1a1a]/70 text-xl md:text-2xl leading-relaxed">
+              Comunicación estratégica que genera resultados tangibles.
+              Somos tu socio para crecer.
             </p>
           </motion.div>
 
@@ -67,8 +61,8 @@ export default function QuienesSomos() {
           >
             {/* Quote */}
             <blockquote className="border-l-2 border-[#c81e1e] pl-6 mb-10">
-              <p className="font-mono text-xl md:text-2xl font-light italic text-[#1a1a1a]">
-                &ldquo;Cada proyecto lo asumimos con cabeza, corazón y disciplina.&rdquo;
+              <p className="font-sans text-2xl md:text-3xl font-light italic text-[#1a1a1a]">
+                &ldquo;Cabeza, corazón y disciplina.&rdquo;
               </p>
             </blockquote>
 
@@ -77,7 +71,7 @@ export default function QuienesSomos() {
               href="/nosotros"
               className="group inline-flex items-center gap-4"
             >
-              <span className="font-mono text-sm border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] group-hover:text-[#c81e1e] transition-colors">
+              <span className="font-sans text-sm border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] group-hover:text-[#c81e1e] transition-colors">
                 Conocenos más
               </span>
               <span className="w-10 h-10 rounded-full border border-[#1a1a1a]/20 flex items-center justify-center group-hover:bg-[#c81e1e] group-hover:border-[#c81e1e] group-hover:text-white transition-all duration-300">

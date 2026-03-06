@@ -55,7 +55,7 @@ export default function Enfoque() {
             transition={{ duration: 0.7 }}
             className="md:col-span-6"
           >
-            <h2 className="font-mono text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light">
+            <h2 className="font-sans text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light">
               Método, innovación
               <br />
               y <span className="italic text-[#c81e1e]">humanidad</span>.
@@ -68,10 +68,8 @@ export default function Enfoque() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="md:col-span-5 md:col-start-8 flex items-end"
           >
-            <p className="text-white/60 text-base leading-relaxed">
-              En Avanti Lab, todo parte de un método claro: pensar, planificar y ejecutar
-              con propósito. Creemos en la precisión del análisis, la fuerza de las ideas
-              y el poder de la acción bien hecha.
+            <p className="text-white/60 text-xl md:text-2xl leading-relaxed">
+              Pensar, planificar y ejecutar con propósito.
             </p>
           </motion.div>
         </div>
@@ -86,28 +84,19 @@ export default function Enfoque() {
               transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
               className="group p-8 border border-white/10 hover:border-[#c81e1e]/50 hover:bg-white/5 transition-all duration-300"
             >
-              <span className="text-[#c81e1e] font-mono text-xs mb-6 block">
+              <span className="text-[#c81e1e] font-sans text-xs mb-6 block">
                 {pilar.id}
               </span>
-              <h3 className="font-mono text-white text-2xl font-light mb-3">
+              <h3 className="font-sans text-white text-3xl font-light mb-4">
                 {pilar.title}
               </h3>
-              <p className="text-white/50 text-sm">
+              <p className="text-white/50 text-lg">
                 {pilar.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Línea final */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-white/40 text-center font-mono text-sm mt-16"
-        >
-          Esa combinación nos permite ofrecer soluciones creativas con impacto medible.
-        </motion.p>
       </div>
     </section>
   )

@@ -7,27 +7,6 @@ export default function Hero() {
     <section
       className="min-h-screen relative flex items-center overflow-hidden bg-[#FAFAF9]"
     >
-      {/* Skyline mobile */}
-      <div
-        className="absolute inset-0 opacity-50 md:hidden"
-        style={{
-          backgroundImage: 'url(/hero2.png)',
-          backgroundPosition: 'center calc(100% + 220px)',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100%',
-        }}
-      />
-      {/* Skyline desktop */}
-      <div
-        className="absolute inset-0 opacity-50 hidden md:block"
-        style={{
-          backgroundImage: 'url(/hero.png)',
-          backgroundPosition: 'center calc(100% + 380px)',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '80%',
-        }}
-      />
-
       {/* Contenido */}
       <div className="relative z-10 w-full px-6 py-32">
         <div className="max-w-7xl mx-auto">
@@ -84,9 +63,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="grid md:grid-cols-2 gap-12 items-end"
           >
-            <div className="max-w-md">
-              <p className="text-[#1a1a1a]/60 text-lg leading-relaxed">
-                Transformamos ideas en resultados reales a través de comunicación estratégica, creatividad y método.
+            <div className="max-w-lg">
+              <p className="text-[#1a1a1a]/60 text-xl md:text-2xl leading-relaxed">
+                Ideas → Resultados. Comunicación estratégica con método.
               </p>
             </div>
 
@@ -95,7 +74,7 @@ export default function Hero() {
                 href="#servicios"
                 className="group inline-flex items-center gap-4"
               >
-                <span className="text-[#1a1a1a] font-mono text-sm border-b border-[#1a1a1a]/20 pb-1 group-hover:border-[#c81e1e] transition-colors">
+                <span className="text-[#1a1a1a] font-sans text-sm border-b border-[#1a1a1a]/20 pb-1 group-hover:border-[#c81e1e] transition-colors">
                   Descubrí cómo lo hacemos
                 </span>
                 <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">

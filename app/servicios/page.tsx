@@ -66,7 +66,7 @@ export default function ServiciosPage() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#c81e1e] font-mono text-sm mb-6 block"
+              className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase mb-6 block"
             >
               Servicios
             </motion.span>
@@ -75,7 +75,7 @@ export default function ServiciosPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-mono text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter font-light text-[#1a1a1a] max-w-5xl"
+              className="text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight font-light text-[#1a1a1a] max-w-5xl"
             >
               Lo que hacemos,
               <br />
@@ -119,7 +119,7 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="md:col-span-5">
-                  <h2 className="font-mono text-2xl md:text-3xl font-light mb-4">
+                  <h2 className="font-sans text-2xl md:text-3xl font-light mb-4">
                     {servicio.title}
                   </h2>
                   <p className="text-[#1a1a1a]/60 text-sm leading-relaxed">
@@ -159,7 +159,7 @@ export default function ServiciosPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-white text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
+              className="font-sans text-white text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
             >
               Cómo trabajamos.
             </motion.h2>
@@ -179,7 +179,7 @@ export default function ServiciosPage() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <span className="text-[#c81e1e] font-mono text-xs">{paso.num}</span>
-                  <h3 className="text-white font-mono text-xl mt-2 mb-3">{paso.title}</h3>
+                  <h3 className="text-white font-sans text-xl font-medium mt-2 mb-3">{paso.title}</h3>
                   <p className="text-white/40 text-sm">{paso.desc}</p>
                 </motion.div>
               ))}
@@ -195,7 +195,7 @@ export default function ServiciosPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="md:col-span-6 font-mono text-3xl md:text-4xl lg:text-5xl leading-[1.1] font-light"
+                className="md:col-span-6 font-sans text-3xl md:text-4xl lg:text-5xl leading-[1.1] font-light"
               >
                 ¿Tenés un proyecto
                 <br />
@@ -210,7 +210,7 @@ export default function ServiciosPage() {
               >
                 <a
                   href="/contacto"
-                  className="group inline-flex items-center gap-4 font-mono text-sm"
+                  className="group inline-flex items-center gap-4 font-sans text-sm"
                 >
                   <span className="border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
                     Contanos tu idea

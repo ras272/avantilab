@@ -45,7 +45,7 @@ export default function Filosofia() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="font-mono text-2xl md:text-3xl font-light text-[#1a1a1a]/60 mb-12"
+          className="font-sans text-2xl md:text-3xl font-light text-[#1a1a1a]/60 mb-12"
         >
           Pensamos diferente, trabajamos con método.
         </motion.h2>
@@ -58,7 +58,7 @@ export default function Filosofia() {
                 initial={{ y: 80, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.7, delay: 0.2 + i * 0.08 }}
-                className={`font-mono text-3xl md:text-4xl lg:text-5xl leading-[1.2] tracking-tight font-light ${
+                className={`font-sans text-3xl md:text-4xl lg:text-5xl leading-[1.2] tracking-tight font-light ${
                   linea.highlight ? 'text-[#c81e1e]' : 'text-[#1a1a1a]'
                 }`}
               >
@@ -75,12 +75,8 @@ export default function Filosofia() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-16 max-w-2xl"
         >
-          <p className="text-[#1a1a1a]/60 text-base leading-relaxed mb-4">
-            Así somos en Avanti Lab.
-          </p>
-          <p className="text-[#1a1a1a]/80 text-lg leading-relaxed">
-            Porque cuando comunicamos con propósito, las cosas suceden…
-            y cuando suceden, <span className="text-[#c81e1e] font-medium">dejan huella</span>.
+          <p className="text-[#1a1a1a]/80 text-xl md:text-2xl leading-relaxed">
+            Comunicamos con propósito, <span className="text-[#c81e1e] font-medium">dejamos huella</span>.
           </p>
         </motion.div>
       </div>

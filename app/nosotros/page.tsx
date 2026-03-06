@@ -61,7 +61,7 @@ export default function NosotrosPage() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#c81e1e] font-mono text-sm mb-6 block"
+              className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase mb-6 block"
             >
               Nosotros
             </motion.span>
@@ -70,7 +70,7 @@ export default function NosotrosPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-mono text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter font-light text-[#1a1a1a] max-w-5xl"
+              className="text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight font-light text-[#1a1a1a] max-w-5xl"
             >
               El laboratorio
               <br />
@@ -92,7 +92,7 @@ export default function NosotrosPage() {
                 transition={{ duration: 0.6 }}
                 className="md:col-span-6"
               >
-                <p className="font-mono text-xl md:text-2xl leading-[1.4] font-light text-[#1a1a1a]">
+                <p className="text-xl md:text-2xl leading-[1.4] font-light text-[#1a1a1a]">
                   Avanti Lab nace de la convicción de que comunicar es transformar.
                   Somos un equipo multidisciplinario que combina estrategia, datos
                   y creatividad para construir narrativas que conectan.
@@ -133,7 +133,7 @@ export default function NosotrosPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-white text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
+              className="font-sans text-white text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
             >
               La cultura que nos mueve.
             </motion.h2>
@@ -151,7 +151,7 @@ export default function NosotrosPage() {
                   <div className="flex items-start gap-4">
                     <span className="text-[#c81e1e] font-mono text-xs">{valor.id}</span>
                     <div>
-                      <h3 className="text-white font-mono text-lg mb-2">{valor.title}</h3>
+                      <h3 className="text-white font-sans text-lg font-medium mb-2">{valor.title}</h3>
                       <p className="text-white/40 text-sm">{valor.description}</p>
                     </div>
                   </div>
@@ -173,7 +173,7 @@ export default function NosotrosPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-[#1a1a1a] text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
+              className="font-sans text-[#1a1a1a] text-3xl md:text-4xl leading-[1.2] font-light max-w-2xl mb-16"
             >
               Las personas detrás.
             </motion.h2>
@@ -190,7 +190,7 @@ export default function NosotrosPage() {
                 >
                   <div className="aspect-[3/4] bg-[#1a1a1a]/5 mb-4" />
                   <span className="text-[#c81e1e] font-mono text-xs">{persona.rol}</span>
-                  <h3 className="font-mono text-lg mt-1 mb-2">{persona.nombre}</h3>
+                  <h3 className="font-sans text-lg font-medium mt-1 mb-2">{persona.nombre}</h3>
                   <p className="text-[#1a1a1a]/50 text-sm leading-relaxed">{persona.bio}</p>
                 </motion.div>
               ))}
@@ -205,7 +205,7 @@ export default function NosotrosPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-3xl md:text-4xl leading-[1.2] font-light mb-8"
+              className="font-sans text-3xl md:text-4xl leading-[1.2] font-light mb-8"
             >
               ¿Querés conocernos más?
             </motion.h2>
@@ -214,7 +214,7 @@ export default function NosotrosPage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-3 font-mono text-sm border-b border-[#1a1a1a]/30 pb-1 hover:border-[#c81e1e] transition-colors"
+              className="inline-flex items-center gap-3 font-sans text-sm border-b border-[#1a1a1a]/30 pb-1 hover:border-[#c81e1e] transition-colors"
             >
               Hablemos
               <span>↗</span>

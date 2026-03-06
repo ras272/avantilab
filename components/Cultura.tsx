@@ -31,7 +31,7 @@ export default function Cultura() {
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section className="py-32 px-6 relative overflow-hidden" ref={ref}>
+    <section className="py-16 md:py-32 px-6 relative overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -53,16 +53,14 @@ export default function Cultura() {
             transition={{ duration: 0.7 }}
             className="md:col-span-5"
           >
-            <h2 className="font-mono text-4xl md:text-5xl leading-[1.1] tracking-tight font-light mb-6">
+            <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light mb-8">
               La cultura que
               <br />
               nos <span className="italic text-[#c81e1e]">mueve</span>.
             </h2>
 
-            <p className="text-[#1a1a1a]/60 text-base leading-relaxed">
-              Somos una manada que piensa, crea y celebra en equipo.
-              Cada logro es colectivo, cada error es aprendizaje,
-              y cada cliente es una historia compartida.
+            <p className="text-[#1a1a1a]/60 text-xl md:text-2xl leading-relaxed">
+              Pensamos, creamos y celebramos en equipo.
             </p>
           </motion.div>
 
@@ -83,12 +81,12 @@ export default function Cultura() {
                   className="group py-5 border-b border-[#1a1a1a]/10 flex items-start justify-between gap-4 hover:border-[#c81e1e]/30 transition-colors cursor-default"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="text-[#c81e1e] text-lg leading-none">•</span>
+                    <span className="text-[#c81e1e] text-xl leading-none">•</span>
                     <div>
-                      <h3 className="font-mono text-lg font-medium text-[#1a1a1a] group-hover:text-[#c81e1e] transition-colors">
+                      <h3 className="font-sans text-xl md:text-2xl font-medium text-[#1a1a1a] group-hover:text-[#c81e1e] transition-colors">
                         {valor.title}
                       </h3>
-                      <p className="text-[#1a1a1a]/50 text-sm mt-1">
+                      <p className="text-[#1a1a1a]/50 text-base md:text-lg mt-1">
                         {valor.description}
                       </p>
                     </div>

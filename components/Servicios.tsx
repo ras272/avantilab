@@ -55,7 +55,7 @@ export default function Servicios() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
-              className="font-mono text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light"
+              className="font-sans text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light"
             >
               Estrategia que deja
               <br />
@@ -66,11 +66,9 @@ export default function Servicios() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white/70 text-base mt-6 max-w-lg"
+              className="text-white/70 text-xl md:text-2xl mt-6 max-w-lg"
             >
-              Acompañamos a empresas, instituciones y marcas personales a lograr
-              visibilidad, reputación y resultados, con un enfoque integral de
-              comunicación estratégica.
+              Visibilidad, reputación y resultados reales.
             </motion.p>
           </div>
 
@@ -81,7 +79,7 @@ export default function Servicios() {
           >
             <Link
               href="/servicios"
-              className="group inline-flex items-center gap-3 text-white font-mono text-sm"
+              className="group inline-flex items-center gap-3 text-white font-sans text-sm"
             >
               <span className="border-b border-white/30 pb-1 group-hover:border-white transition-colors">
                 Ver servicios completos
@@ -104,15 +102,15 @@ export default function Servicios() {
               className="group"
             >
               <div className="bg-white/10 backdrop-blur-sm p-8 md:p-10 h-full hover:bg-white transition-all duration-500 cursor-pointer">
-                <span className="text-white/50 font-mono text-xs group-hover:text-[#c81e1e] transition-colors">
+                <span className="text-white/50 font-sans text-xs group-hover:text-[#c81e1e] transition-colors">
                   {service.id}
                 </span>
 
-                <h3 className="font-mono text-white text-xl md:text-2xl font-light mt-4 mb-3 group-hover:text-[#1a1a1a] transition-colors duration-500">
+                <h3 className="font-sans text-white text-2xl md:text-3xl font-light mt-4 mb-4 group-hover:text-[#1a1a1a] transition-colors duration-500">
                   {service.title}
                 </h3>
 
-                <p className="text-white/60 text-sm leading-relaxed group-hover:text-[#1a1a1a]/60 transition-colors duration-500">
+                <p className="text-white/60 text-lg leading-relaxed group-hover:text-[#1a1a1a]/60 transition-colors duration-500">
                   {service.description}
                 </p>
 

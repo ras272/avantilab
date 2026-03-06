@@ -74,7 +74,7 @@ export default function TrabajoPage() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-[#c81e1e] font-mono text-sm mb-6 block"
+              className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase mb-6 block"
             >
               Trabajo
             </motion.span>
@@ -83,7 +83,7 @@ export default function TrabajoPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-mono text-[10vw] md:text-[7vw] leading-[0.9] tracking-tighter font-light text-[#1a1a1a] max-w-5xl"
+              className="text-[10vw] md:text-[7vw] leading-[0.9] tracking-tight font-light text-[#1a1a1a] max-w-5xl"
             >
               Resultados que
               <br />
@@ -104,10 +104,10 @@ export default function TrabajoPage() {
               {categorias.map((cat, i) => (
                 <button
                   key={cat}
-                  className={`font-mono text-xs uppercase tracking-wider py-2 px-4 border transition-colors ${
+                  className={`font-sans text-xs uppercase tracking-wider py-2.5 px-5 border rounded-full transition-all duration-300 ${
                     i === 0
                       ? 'border-[#1a1a1a] bg-[#1a1a1a] text-white'
-                      : 'border-[#1a1a1a]/20 text-[#1a1a1a]/60 hover:border-[#1a1a1a]/40'
+                      : 'border-[#1a1a1a]/20 text-[#1a1a1a]/60 hover:border-[#c81e1e] hover:text-[#c81e1e]'
                   }`}
                 >
                   {cat}
@@ -133,7 +133,7 @@ export default function TrabajoPage() {
                   {/* Imagen */}
                   <div className="aspect-[16/10] bg-[#1a1a1a]/5 mb-6 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[#1a1a1a] opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white font-mono text-sm">Ver caso ↗</span>
+                      <span className="text-white font-sans text-sm">Ver caso ↗</span>
                     </div>
                   </div>
 
@@ -148,14 +148,14 @@ export default function TrabajoPage() {
                           {caso.year}
                         </span>
                       </div>
-                      <h2 className="font-mono text-xl md:text-2xl font-light mb-2 group-hover:text-[#c81e1e] transition-colors">
+                      <h2 className="font-sans text-xl md:text-2xl font-light mb-2 group-hover:text-[#c81e1e] transition-colors">
                         {caso.title}
                       </h2>
                       <p className="text-[#1a1a1a]/50 text-sm leading-relaxed">
                         {caso.description}
                       </p>
                     </div>
-                    <span className="text-[#1a1a1a]/30 font-mono text-sm whitespace-nowrap">
+                    <span className="text-[#1a1a1a]/30 font-sans text-sm whitespace-nowrap">
                       {caso.result}
                     </span>
                   </div>
@@ -172,7 +172,7 @@ export default function TrabajoPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-mono text-white text-3xl md:text-4xl leading-[1.2] font-light mb-8"
+              className="font-sans text-white text-3xl md:text-4xl leading-[1.2] font-light mb-8"
             >
               ¿Tu proyecto podría estar acá?
             </motion.h2>
@@ -181,7 +181,7 @@ export default function TrabajoPage() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="group inline-flex items-center gap-4 text-white font-mono text-sm"
+              className="group inline-flex items-center gap-4 text-white font-sans text-sm"
             >
               <span className="border-b border-white/30 pb-1 group-hover:border-[#c81e1e] transition-colors">
                 Conversemos
