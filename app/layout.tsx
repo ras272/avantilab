@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Analytics } from '@vercel/analytics/next'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import Loader from '@/components/Loader'
 import './globals.css'
@@ -30,6 +31,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   )
