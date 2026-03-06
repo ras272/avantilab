@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   description: 'Somos el laboratorio donde la estrategia se convierte en impacto. Transformamos ideas en resultados reales a través de comunicación estratégica, creatividad y método.',
   keywords: ['comunicación estratégica', 'agencia', 'LATAM', 'branding', 'marketing', 'estrategia'],
   authors: [{ name: 'Avanti Lab' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: 'Avanti Lab | Comunicación Estratégica',
     description: 'El laboratorio donde la estrategia se convierte en impacto.',
