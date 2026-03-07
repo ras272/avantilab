@@ -59,8 +59,18 @@ export default function Contacto() {
 
   return (
     <section id="contacto" className="relative overflow-hidden" ref={ref}>
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 0.02 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute right-0 top-1/3 -translate-y-1/2 text-[50vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none z-0"
+      >
+        08
+      </motion.span>
+
       {/* Sección principal */}
-      <div className="py-32 px-6 bg-[#FAFAF9]">
+      <div className="py-32 px-6 bg-[#FAFAF9] relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <motion.div

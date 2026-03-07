@@ -38,8 +38,18 @@ export default function Reels() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-16 md:py-32 px-6 bg-[#FAFAF9] overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 md:py-32 px-6 bg-[#FAFAF9] overflow-hidden relative" ref={ref}>
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 0.02 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 text-[50vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none"
+      >
+        06
+      </motion.span>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
           <div>

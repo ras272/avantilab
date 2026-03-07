@@ -27,6 +27,16 @@ export default function Enfoque() {
 
   return (
     <section className="py-32 px-6 bg-[#1a1a1a] relative overflow-hidden" ref={ref}>
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0, x: -100 }}
+        animate={isInView ? { opacity: 0.03, x: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute -left-10 top-1/2 -translate-y-1/2 text-[40vw] font-mono font-bold text-white leading-none pointer-events-none select-none"
+      >
+        02
+      </motion.span>
+
       {/* Textura */}
       <div
         className="absolute inset-0 opacity-[0.3] mix-blend-overlay"

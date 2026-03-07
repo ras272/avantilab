@@ -25,7 +25,7 @@ export default function Filosofia() {
         transition={{ duration: 1 }}
         className="absolute right-0 top-1/2 -translate-y-1/2 text-[50vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none"
       >
-        05
+        04
       </motion.span>
 
       <div className="max-w-7xl mx-auto relative z-10">

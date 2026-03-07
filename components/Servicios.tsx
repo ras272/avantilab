@@ -36,6 +36,16 @@ export default function Servicios() {
         }}
       />
 
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 0.18 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 text-[50vw] font-mono font-bold text-black leading-none pointer-events-none select-none z-[5]"
+      >
+        03
+      </motion.span>
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">

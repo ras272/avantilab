@@ -32,7 +32,17 @@ export default function Cultura() {
 
   return (
     <section className="py-16 md:py-32 px-6 relative overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto">
+      {/* Número grande de fondo */}
+      <motion.span
+        initial={{ opacity: 0, x: -100 }}
+        animate={isInView ? { opacity: 0.03, x: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute -left-10 top-1/2 -translate-y-1/2 text-[40vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none"
+      >
+        07
+      </motion.span>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0 }}
