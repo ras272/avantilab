@@ -17,12 +17,13 @@ export default function Navbar() {
   return (
     <>
       {/* Navbar institucional */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#1a1a1a]/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="fixed top-4 left-4 right-4 z-50 h-16 bg-white/90 backdrop-blur-md border border-[#1a1a1a]/5 rounded-2xl">
+        <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between relative">
           {/* Logo */}
-          <Link href="/">
-            <img src="/logo.png" alt="Avanti Lab" className="h-36 w-auto -my-12" />
+          <Link href="/" className="absolute left-6 top-1/2 -translate-y-1/2">
+            <img src="/logo.png" alt="Avanti Lab" className="h-52 w-auto object-contain" />
           </Link>
+          <div className="w-44" /> {/* Spacer para el logo */}
 
           {/* Links desktop */}
           <div className="hidden md:flex items-center gap-10">

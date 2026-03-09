@@ -11,11 +11,9 @@ export default function Footer() {
       </span>
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-12 gap-8 mb-12">
-          {/* Logo y tagline */}
-          <div className="md:col-span-4">
-            <p className="text-white/40 text-sm leading-relaxed">
-              Comunicar para cambiar realidades.
-            </p>
+          {/* Logo */}
+          <div className="md:col-span-4 flex items-start">
+            <img src="/logo.png" alt="Avanti Lab" className="h-48 w-auto object-contain brightness-0 invert -ml-6 -mt-8" />
           </div>
 
           {/* Nav */}
