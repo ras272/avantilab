@@ -18,7 +18,7 @@ export default function Hero() {
             className="mb-12"
           >
             <span className="text-[#c81e1e] font-mono text-xs tracking-[0.2em] uppercase">
-              Laboratorio de comunicación 360°
+              Laboratorio de comunicación integral
             </span>
           </motion.div>
 
@@ -31,7 +31,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
               >
-                <span className="italic text-[#c81e1e]">Estrategia</span> convertida
+                <span className="italic">Estrategia</span> convertida
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -41,7 +41,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
               >
-                en <span className="italic">impacto</span><span className="text-[#c81e1e]">.</span>
+                en <span className="italic text-[#c81e1e]">impacto</span>.
               </motion.h1>
             </div>
           </div>
