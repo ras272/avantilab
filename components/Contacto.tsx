@@ -6,7 +6,6 @@ import { useRef, useState } from 'react'
 export default function Contacto() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
-  const [email, setEmail] = useState('')
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [currentMonthOffset, setCurrentMonthOffset] = useState(0)
 
@@ -93,18 +92,18 @@ export default function Contacto() {
               className="md:col-span-5"
             >
               <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight font-light mb-6">
-                Hablemos de tu
+                Hablemos del próximo
                 <br />
-                próximo <span className="italic text-[#c81e1e]">paso</span>.
+                paso de tu <span className="italic text-[#c81e1e]">marca</span>.
               </h2>
 
               <p className="text-[#1a1a1a]/60 text-base leading-relaxed mb-4">
-                Cada marca tiene un punto de partida. En Avanti Lab, hacemos que
-                avance con estrategia, propósito y acción.
+                Cada marca tiene un punto de partida. En Avanti Lab, evaluamos las
+                oportunidades de crecimiento desde el diagnóstico.
               </p>
 
               <p className="text-[#1a1a1a]/80 text-base leading-relaxed mb-8">
-                Conversemos sobre cómo transformar tu comunicación en resultados.
+                Conversemos sobre tu marca.
               </p>
 
               {/* Info de contacto */}
@@ -149,21 +148,21 @@ export default function Contacto() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="md:col-span-6 md:col-start-7"
             >
-              <div className="bg-white border border-[#1a1a1a]/10 overflow-hidden p-6">
+              <div className="bg-gradient-to-br from-[#c81e1e] to-[#9a1717] rounded-3xl overflow-hidden p-8 shadow-2xl shadow-[#c81e1e]/30">
                 {/* Header del calendario */}
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="font-sans text-lg font-medium capitalize">{currentMonth}</h3>
+                  <h3 className="font-sans text-xl font-medium capitalize text-white">{currentMonth}</h3>
                   <div className="flex gap-2">
                     <button
                       onClick={() => setCurrentMonthOffset(prev => prev - 1)}
                       disabled={currentMonthOffset === 0}
-                      className="w-8 h-8 rounded-full border border-[#1a1a1a]/10 flex items-center justify-center text-[#1a1a1a]/40 hover:border-[#c81e1e] hover:text-[#c81e1e] transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-[#1a1a1a]/10 disabled:hover:text-[#1a1a1a]/40"
+                      className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-white hover:text-white hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-white/20 disabled:hover:text-white/60 disabled:hover:bg-transparent"
                     >
                       ←
                     </button>
                     <button
                       onClick={() => setCurrentMonthOffset(prev => prev + 1)}
-                      className="w-8 h-8 rounded-full border border-[#1a1a1a]/10 flex items-center justify-center text-[#1a1a1a]/40 hover:border-[#c81e1e] hover:text-[#c81e1e] transition-colors"
+                      className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:border-white hover:text-white hover:bg-white/10 transition-all"
                     >
                       →
                     </button>
@@ -173,7 +172,7 @@ export default function Contacto() {
                 {/* Días de la semana */}
                 <div className="grid grid-cols-7 gap-1 mb-2">
                   {['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'].map((day) => (
-                    <div key={day} className="text-center text-xs text-[#1a1a1a]/40 font-sans py-2">
+                    <div key={day} className="text-center text-xs text-white/50 font-sans py-2">
                       {day}
                     </div>
                   ))}
@@ -193,12 +192,12 @@ export default function Contacto() {
                       disabled={isPastDay(day)}
                       className={`aspect-square rounded-full flex items-center justify-center text-sm font-sans transition-all ${
                         isSelected(day)
-                          ? 'bg-[#c81e1e] text-white'
+                          ? 'bg-white text-[#c81e1e] font-medium shadow-lg'
                           : isToday(day)
-                          ? 'border-2 border-[#c81e1e] text-[#c81e1e]'
+                          ? 'border-2 border-white text-white font-medium'
                           : isPastDay(day)
-                          ? 'text-[#1a1a1a]/20 cursor-not-allowed'
-                          : 'hover:bg-[#c81e1e]/10 text-[#1a1a1a]/70 hover:text-[#c81e1e]'
+                          ? 'text-white/20 cursor-not-allowed'
+                          : 'hover:bg-white/20 text-white/80 hover:text-white'
                       }`}
                     >
                       {day}
@@ -207,24 +206,27 @@ export default function Contacto() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-6 pt-6 border-t border-[#1a1a1a]/10">
+                <div className="mt-6 pt-6 border-t border-white/20">
                   {selectedDate ? (
-                    <p className="text-[#1a1a1a]/70 text-sm mb-4">
-                      Fecha seleccionada: <span className="font-medium text-[#c81e1e] capitalize">{formatSelectedDate()}</span>
+                    <p className="text-white/80 text-sm mb-4">
+                      Fecha seleccionada: <span className="font-medium text-white capitalize">{formatSelectedDate()}</span>
                     </p>
                   ) : (
-                    <p className="text-[#1a1a1a]/50 text-sm mb-4">Seleccioná un día para agendar una reunión de 30 minutos.</p>
+                    <p className="text-white/60 text-sm mb-4">Seleccioná un día para agendar una reunión.</p>
                   )}
                   <a
                     href={getWhatsAppLink()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`block w-full py-3 text-white text-center font-sans text-sm rounded-full transition-colors ${
+                    className={`flex items-center justify-center gap-2 w-full py-3.5 font-sans text-sm rounded-full transition-all ${
                       selectedDate
-                        ? 'bg-[#c81e1e] hover:bg-[#a01818]'
-                        : 'bg-[#1a1a1a]/30 hover:bg-[#1a1a1a]/50'
+                        ? 'bg-white text-[#c81e1e] font-medium hover:bg-white/90 shadow-lg'
+                        : 'bg-white/20 text-white hover:bg-white/30'
                     }`}
                   >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
                     {selectedDate ? 'Confirmar por WhatsApp' : 'Agendar por WhatsApp'}
                   </a>
                 </div>
@@ -234,46 +236,6 @@ export default function Contacto() {
         </div>
       </div>
 
-      {/* Barra inferior */}
-      <div className="py-8 px-6 bg-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <span className="text-white/60 font-sans text-sm">
-              ¿Preferís escribirnos?
-            </span>
-            <a
-              href="mailto:hola@avanti-lab.com"
-              className="text-white font-sans text-sm hover:text-[#c81e1e] transition-colors"
-            >
-              hola@avanti-lab.com
-            </a>
-          </div>
-
-          {/* Mini form */}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault()
-              window.location.href = `mailto:hola@avanti-lab.com?subject=Contacto desde web&body=Mi email: ${email}`
-            }}
-            className="flex items-center gap-3"
-          >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Tu email"
-              className="bg-transparent border-b border-white/20 py-2 px-1 text-white font-sans text-sm placeholder:text-white/30 focus:outline-none focus:border-[#c81e1e] transition-colors w-48"
-            />
-            <button
-              type="submit"
-              className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-[#c81e1e] hover:border-[#c81e1e] hover:text-white transition-all text-sm"
-            >
-              →
-            </button>
-          </form>
-        </div>
-      </div>
     </section>
   )
 }

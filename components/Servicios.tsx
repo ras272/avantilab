@@ -2,23 +2,32 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Link from 'next/link'
 
 const services = [
   {
     id: '01',
-    title: 'Estrategia y posicionamiento',
-    description: 'Comunicación que define rumbo y propósito.',
+    title: 'Estrategia',
+    description: 'Diagnóstico, posicionamiento y planificación de comunicación.',
   },
   {
     id: '02',
-    title: 'Producción y creatividad',
-    description: 'Contenido audiovisual, narrativas y diseño con identidad.',
+    title: 'Creatividad',
+    description: 'Conceptos creativos, campañas y desarrollo de marca.',
   },
   {
     id: '03',
-    title: 'Presencia digital y medios',
-    description: 'Pauta, redes y gestión reputacional para amplificar resultados.',
+    title: 'Contenidos',
+    description: 'Producción de contenido para medios digitales y tradicionales.',
+  },
+  {
+    id: '04',
+    title: 'Diseño',
+    description: 'Diseño gráfico, piezas de comunicación y desarrollo visual.',
+  },
+  {
+    id: '05',
+    title: 'Producción',
+    description: 'Adaptaciones, piezas para medios y producción de campañas.',
   },
 ]
 
@@ -48,85 +57,65 @@ export default function Servicios() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8 mb-12 md:mb-16">
           <div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
-              className="flex items-center gap-4 mb-6"
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-4 mb-5"
             >
-              <span className="w-12 h-px bg-white/50" />
-              <span className="text-white/70 font-mono text-xs tracking-[0.3em] uppercase">
+              <span className="w-10 h-px bg-white/40" />
+              <span className="text-white/60 font-mono text-[11px] tracking-[0.25em] uppercase">
                 Qué Hacemos
               </span>
             </motion.div>
 
             <motion.h2
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="font-sans text-white text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-light"
             >
-              Estrategia que deja
+              Comunicación con
               <br />
-              <span className="italic">huella</span>.
+              <span className="italic">dirección</span>.
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-white/70 text-xl md:text-2xl mt-6 max-w-lg"
+              transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="text-white/60 text-lg md:text-xl mt-5 max-w-md"
             >
-              Visibilidad, reputación y resultados reales.
+              Combinamos estrategia, creatividad y metodología para transformar ideas en acciones.
             </motion.p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.4 }}
-          >
-            <Link
-              href="/servicios"
-              className="group inline-flex items-center gap-3 text-white font-sans text-sm"
-            >
-              <span className="border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-                Ver servicios completos
-              </span>
-              <span className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-[#c81e1e] transition-all duration-300">
-                ↗
-              </span>
-            </Link>
-          </motion.div>
         </div>
 
         {/* Grid de servicios */}
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {services.map((service, i) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2 + i * 0.06,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
               className="group"
             >
-              <div className="bg-white/10 backdrop-blur-sm p-8 md:p-10 h-full hover:bg-white transition-all duration-500 cursor-pointer">
-                <span className="text-white/50 font-sans text-xs group-hover:text-[#c81e1e] transition-colors">
-                  {service.id}
-                </span>
-
-                <h3 className="font-sans text-white text-2xl md:text-3xl font-light mt-4 mb-4 group-hover:text-[#1a1a1a] transition-colors duration-500">
+              <div className="bg-white/10 backdrop-blur-sm p-6 h-full rounded-sm hover:bg-white transition-all duration-300 ease-out cursor-pointer focus-within:ring-2 focus-within:ring-white/50 focus-within:ring-offset-2 focus-within:ring-offset-[#c81e1e]">
+                <h3 className="font-sans text-white text-lg md:text-xl font-light mb-3 group-hover:text-[#1a1a1a] transition-colors duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-white/60 text-lg leading-relaxed group-hover:text-[#1a1a1a]/60 transition-colors duration-500">
+                <p className="text-white/50 text-sm leading-relaxed group-hover:text-[#1a1a1a]/70 transition-colors duration-300">
                   {service.description}
                 </p>
-
-                <span className="inline-block mt-6 text-white/40 group-hover:text-[#c81e1e] group-hover:translate-x-2 transition-all duration-300">
-                  →
-                </span>
               </div>
             </motion.div>
           ))}

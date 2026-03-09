@@ -18,7 +18,7 @@ export default function Hero() {
             className="mb-12"
           >
             <span className="text-[#c81e1e] font-mono text-xs tracking-[0.2em] uppercase">
-              Comunicación Estratégica
+              Laboratorio de comunicación 360°
             </span>
           </motion.div>
 
@@ -31,7 +31,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
               >
-                El laboratorio donde
+                <span className="italic text-[#c81e1e]">Estrategia</span> convertida
               </motion.h1>
             </div>
             <div className="overflow-hidden">
@@ -41,48 +41,28 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
               >
-                la <span className="italic text-[#c81e1e]">estrategia</span> se convierte
-              </motion.h1>
-            </div>
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: 100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-[#1a1a1a] text-[12vw] md:text-[8vw] lg:text-[6vw] leading-[1.05] tracking-tight font-light"
-              >
                 en <span className="italic">impacto</span><span className="text-[#c81e1e]">.</span>
               </motion.h1>
             </div>
           </div>
 
-          {/* Grid inferior */}
-          <motion.div
+          {/* CTA */}
+          <motion.button
+            onClick={() => {
+              document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth' })
+            }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid md:grid-cols-2 gap-12 items-end"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="group inline-flex items-center gap-4"
           >
-            <div className="max-w-lg">
-              <p className="text-[#1a1a1a]/60 text-xl md:text-2xl leading-relaxed">
-                Ideas → Resultados. Comunicación estratégica con método.
-              </p>
-            </div>
-
-            <div className="flex md:justify-end">
-              <a
-                href="#servicios"
-                className="group inline-flex items-center gap-4"
-              >
-                <span className="text-[#1a1a1a] font-sans text-sm border-b border-[#1a1a1a]/20 pb-1 group-hover:border-[#c81e1e] transition-colors">
-                  Descubrí cómo lo hacemos
-                </span>
-                <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
-                  ↓
-                </span>
-              </a>
-            </div>
-          </motion.div>
+            <span className="text-[#1a1a1a] font-sans text-sm border-b border-[#1a1a1a]/20 pb-1 group-hover:border-[#c81e1e] transition-colors">
+              Descubrinos
+            </span>
+            <span className="w-12 h-12 rounded-full bg-[#c81e1e] flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+              ↓
+            </span>
+          </motion.button>
         </div>
       </div>
 

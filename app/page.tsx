@@ -19,10 +19,10 @@ export default function Home() {
         <QuienesSomos />
         <Enfoque />
         <Servicios />
-        <Filosofia />
+        {/* <Filosofia /> */}
         <Casos />
-        <Reels />
-        <Cultura />
+        {/* <Reels /> */}
+        {/* <Cultura /> */}
         <Contacto />
       </main>
       <Footer />

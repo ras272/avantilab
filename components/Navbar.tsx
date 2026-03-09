@@ -6,9 +6,8 @@ import Link from 'next/link'
 
 const links = [
   { href: '/', label: 'Inicio' },
-  { href: '/nosotros', label: 'Nosotros' },
   { href: '/servicios', label: 'Servicios' },
-  { href: '/trabajo', label: 'Trabajo' },
+  { href: '/casos', label: 'Casos' },
   { href: '/contacto', label: 'Contacto' },
 ]
 
@@ -27,23 +26,39 @@ export default function Navbar() {
 
           {/* Links desktop */}
           <div className="hidden md:flex items-center gap-10">
-            {links.slice(1, -1).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group relative text-[#162139] text-base font-sans font-medium py-1"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#c81e1e] transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
-            <Link
-              href="/contacto"
+            {links.slice(1, -1).map((link) => {
+              const scrollTarget = link.href === '/servicios' ? 'servicios' : link.href === '/casos' ? 'trabajo' : null
+              return scrollTarget ? (
+                <button
+                  key={link.href}
+                  onClick={() => {
+                    document.getElementById(scrollTarget)?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="group relative text-[#162139] text-base font-sans font-medium py-1"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#c81e1e] transition-all duration-300 group-hover:w-full" />
+                </button>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group relative text-[#162139] text-base font-sans font-medium py-1"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#c81e1e] transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )
+            })}
+            <button
+              onClick={() => {
+                document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className="group bg-[#c81e1e] text-white text-sm font-sans px-6 py-2.5 rounded-full hover:bg-[#a01818] hover:shadow-lg hover:shadow-[#c81e1e]/25 transition-all duration-300 flex items-center gap-2"
             >
-              Hablemos
+              Contáctanos
               <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
-            </Link>
+            </button>
           </div>
 
           {/* Menu button mobile */}
