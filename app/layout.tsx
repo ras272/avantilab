@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/react'
@@ -35,6 +36,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      {process.env.NODE_ENV === 'development' && (
+        <Script
+          src="//unpkg.com/react-grab/dist/index.global.js"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+      )}
       <body className="font-sans antialiased">
         <Loader />
         <SmoothScroll>

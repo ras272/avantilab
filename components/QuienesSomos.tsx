@@ -2,20 +2,19 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Link from 'next/link'
 
 export default function QuienesSomos() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   return (
-    <section id="nosotros" className="py-32 px-6 relative overflow-hidden" ref={ref}>
+    <section id="nosotros" className="py-32 px-6 bg-[#1a1a1a] relative overflow-hidden" ref={ref}>
       {/* Número grande de fondo */}
       <motion.span
         initial={{ opacity: 0, x: -100 }}
         animate={isInView ? { opacity: 0.03, x: 0 } : {}}
         transition={{ duration: 1 }}
-        className="absolute -left-10 top-1/2 -translate-y-1/2 text-[40vw] font-mono font-bold text-[#1a1a1a] leading-none pointer-events-none select-none"
+        className="absolute -left-10 top-1/2 -translate-y-1/2 text-[40vw] font-mono font-bold text-white leading-none pointer-events-none select-none"
       >
         01
       </motion.span>
@@ -41,14 +40,15 @@ export default function QuienesSomos() {
             transition={{ duration: 0.8 }}
             className="md:col-span-7"
           >
-            <h2 className="font-sans text-4xl md:text-5xl lg:text-7xl leading-[1.1] tracking-tight font-light mb-10">
-              Hacemos que las{' '}
-              <span className="italic text-[#c81e1e]">cosas pasen</span>.
+            <h2 className="font-sans text-white text-4xl md:text-5xl lg:text-7xl leading-[1.1] tracking-tight font-light mb-10">
+              Somos <span className="italic text-[#c81e1e]">estrategas</span>{' '}
+              de la comunicación.
+              <br />
+              <span className="text-white/60">Pensamos antes de comunicar.</span>
             </h2>
 
-            <p className="text-[#1a1a1a]/70 text-xl md:text-2xl leading-relaxed">
-              Comunicación estratégica que genera resultados tangibles.
-              Somos tu socio para crecer.
+            <p className="text-white/60 text-xl md:text-2xl leading-relaxed">
+              La estrategia define las decisiones que construyen la comunicación con propósito.
             </p>
           </motion.div>
 
@@ -61,23 +61,11 @@ export default function QuienesSomos() {
           >
             {/* Quote */}
             <blockquote className="border-l-2 border-[#c81e1e] pl-6 mb-10">
-              <p className="font-sans text-2xl md:text-3xl font-light italic text-[#1a1a1a]">
-                &ldquo;Cabeza, corazón y disciplina.&rdquo;
+              <p className="font-sans text-2xl md:text-3xl font-light italic text-white">
+                Claridad. Criterio. Consistencia.
               </p>
             </blockquote>
 
-            {/* CTA */}
-            <Link
-              href="/nosotros"
-              className="group inline-flex items-center gap-4"
-            >
-              <span className="font-sans text-sm border-b border-[#1a1a1a]/30 pb-1 group-hover:border-[#c81e1e] group-hover:text-[#c81e1e] transition-colors">
-                Conocenos más
-              </span>
-              <span className="w-10 h-10 rounded-full border border-[#1a1a1a]/20 flex items-center justify-center group-hover:bg-[#c81e1e] group-hover:border-[#c81e1e] group-hover:text-white transition-all duration-300">
-                ↗
-              </span>
-            </Link>
           </motion.div>
         </div>
       </div>
