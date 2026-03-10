@@ -67,7 +67,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(true)}
             className="md:hidden text-[#162139] text-base font-sans font-medium"
           >
-            menú
+            guía
           </button>
         </div>
       </nav>

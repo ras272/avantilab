@@ -66,7 +66,7 @@ export default function Servicios() {
               className="flex items-center gap-4 mb-5"
             >
               <span className="w-10 h-px bg-white/40" />
-              <span className="text-white/60 font-mono text-[11px] tracking-[0.25em] uppercase">
+              <span className="text-white/60 font-mono text-xs tracking-[0.3em] uppercase">
                 Qué Hacemos
               </span>
             </motion.div>

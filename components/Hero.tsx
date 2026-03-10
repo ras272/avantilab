@@ -17,7 +17,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <span className="text-[#c81e1e] font-mono text-xs tracking-[0.2em] uppercase">
+            <span className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase">
               Laboratorio de comunicación integral
             </span>
           </motion.div>

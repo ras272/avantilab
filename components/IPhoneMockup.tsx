@@ -11,37 +11,38 @@ export default function IPhoneMockup({ children, className = '' }: IPhoneMockupP
   return (
     <div className={`relative ${className}`}>
       {/* iPhone Frame */}
-      <div className="relative bg-[#1c1c1e] rounded-[3rem] p-3 shadow-2xl">
-        {/* Outer border highlight */}
-        <div className="absolute inset-0 rounded-[3rem] border border-white/10" />
-
+      <div
+        className="relative bg-[#1a1a1a] rounded-[2.8rem] p-2.5"
+        style={{
+          boxShadow: `
+            inset 0 0 0 1px rgba(255,255,255,0.08),
+            0 30px 60px -15px rgba(0,0,0,0.5),
+            0 50px 100px -30px rgba(0,0,0,0.4)
+          `,
+        }}
+      >
         {/* Side buttons - left */}
-        <div className="absolute left-0 top-28 w-1 h-8 bg-[#2c2c2e] rounded-l-sm -translate-x-0.5" />
-        <div className="absolute left-0 top-44 w-1 h-12 bg-[#2c2c2e] rounded-l-sm -translate-x-0.5" />
-        <div className="absolute left-0 top-60 w-1 h-12 bg-[#2c2c2e] rounded-l-sm -translate-x-0.5" />
+        <div className="absolute left-0 top-24 w-0.5 h-6 bg-[#2a2a2a] rounded-l -translate-x-px" />
+        <div className="absolute left-0 top-36 w-0.5 h-10 bg-[#2a2a2a] rounded-l -translate-x-px" />
+        <div className="absolute left-0 top-52 w-0.5 h-10 bg-[#2a2a2a] rounded-l -translate-x-px" />
 
         {/* Side button - right */}
-        <div className="absolute right-0 top-36 w-1 h-16 bg-[#2c2c2e] rounded-r-sm translate-x-0.5" />
+        <div className="absolute right-0 top-32 w-0.5 h-14 bg-[#2a2a2a] rounded-r translate-x-px" />
 
         {/* Screen */}
-        <div className="relative bg-black rounded-[2.5rem] overflow-hidden">
+        <div className="relative bg-black rounded-[2.3rem] overflow-hidden">
           {/* Dynamic Island */}
-          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-20">
-            <div className="w-28 h-8 bg-black rounded-full flex items-center justify-center gap-2">
-              {/* Camera */}
-              <div className="w-3 h-3 rounded-full bg-[#1c1c1e] ring-1 ring-[#2c2c2e]">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#0a3d62] m-[3px]" />
-              </div>
-            </div>
+          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 z-20">
+            <div className="w-24 h-7 bg-black rounded-full" />
           </div>
 
-          {/* Screen content area */}
+          {/* Screen content */}
           <div className="aspect-[9/19.5] w-full">
             {children}
           </div>
 
           {/* Home indicator */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full" />
+          <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-28 h-1 bg-white/25 rounded-full" />
         </div>
       </div>
     </div>

@@ -28,36 +28,26 @@ export default function Enfoque() {
         >
           <span className="w-12 h-px bg-[#c81e1e]" />
           <span className="text-[#c81e1e] font-mono text-xs tracking-[0.3em] uppercase">
-            Nuestro Enfoque
+            Nuestros principios
           </span>
         </motion.div>
 
         {/* Statement potente */}
-        <div className="max-w-5xl">
+        <div className="max-w-4xl">
           <motion.h2
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-sans text-[#1a1a1a] text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight font-light"
+            className="font-sans text-[#1a1a1a] text-3xl md:text-4xl lg:text-5xl leading-[1.2] tracking-tight font-light"
           >
-            No seguimos{' '}
+            Creemos en la comunicación{' '}
             <motion.span
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-[#1a1a1a]/30"
-            >
-              tendencias
-            </motion.span>
-            .
-            <br />
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
               className="italic text-[#c81e1e]"
             >
-              Las creamos
+              pensada con criterio
             </motion.span>
             .
           </motion.h2>
@@ -65,10 +55,10 @@ export default function Enfoque() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-[#1a1a1a]/50 text-xl md:text-2xl leading-relaxed mt-12 max-w-2xl"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-[#1a1a1a]/60 text-xl md:text-2xl leading-relaxed mt-8 max-w-3xl"
           >
-            Cada marca tiene una historia que contar. Nosotros la convertimos en una estrategia que transforma, conecta y deja huella.
+            Trabajamos a partir del análisis de cada marca, su contexto y sus objetivos. Priorizamos la calidad del trabajo y las relaciones profesionales a largo plazo.
           </motion.p>
         </div>
 
