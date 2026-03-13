@@ -1,69 +1,52 @@
 'use client'
 
-import { motion, useInView, useMotionValue, animate } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import IPhoneMockup from './IPhoneMockup'
 
-const casos = [
-  {
-    id: '01',
-    category: 'Campaña',
-    title: 'Reposicionamiento de figura pública',
-    result: '+340%',
-    resultLabel: 'alcance en medios',
-    description: 'Transformamos la percepción pública mediante una estrategia integral de comunicación.',
-    color: '#c81e1e',
-  },
-  {
-    id: '02',
-    category: 'Branding',
-    title: 'Lanzamiento regional en 5 países',
-    result: '12M',
-    resultLabel: 'impresiones',
-    description: 'Coordinación de lanzamiento simultáneo con adaptación cultural para cada mercado.',
-    color: '#1e88c8',
-  },
-  {
-    id: '03',
-    category: 'Reputación',
-    title: 'Gestión de crisis institucional',
-    result: '85%',
-    resultLabel: 'recuperación',
-    description: 'Respuesta rápida y efectiva para proteger la imagen de una institución líder.',
-    color: '#1ec87a',
-  },
+const videos = [
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/Conti%20FINAL.mp4',
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/T%C3%A9cnicas%20cl%C3%A1sicas%2C%20tendencias%20actuales%2C%20en%20un%20ambiente%20exclusivo%2C%20pensado%20solo%20para%20caballeros.%20.mp4',
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/10%20a%C3%B1os%2C%20cerca%20siempre%E2%80%9CAcompa%C3%B1ar%20es%20lo%20que%20nos%20une.%E2%80%9DEn%20estos%2010%20a%C3%B1os%20en%20Paraguay%2C%20Jean%20Vernier%20h.mp4',
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/As%C3%AD%20celebramos%20nuestros%2010%20a%C3%B1os%20en%20Paraguay%20%F0%9F%87%B5%F0%9F%87%BE%2010%20a%C3%B1os%2C%20juntos%20siempre%21Muchas%20gracias%20por%20acom.mp4',
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/Reuzel%20GALERIA%20CORREGIDO%20.MOV',
+  'https://ohygfcp2wigfpwer.public.blob.vercel-storage.com/%C2%A1Empezamos%20una%20nueva%20etapa%20en%20la%20Universidad%20San%20Carlos%21%F0%9F%8E%93%20Nuestro%20compromiso%20con%20la%20calidad%20y%20f.mp4',
 ]
+
+const AUTO_ADVANCE_MS = 6000
 
 export default function Casos() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeIndex, setActiveIndex] = useState(0)
-  const dragX = useMotionValue(0)
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
 
-  const SLIDE_WIDTH = 100 // percentage
-
-  const handleDragEnd = (_: never, info: { offset: { x: number }; velocity: { x: number } }) => {
-    const threshold = 50
-    const velocity = info.velocity.x
-    const offset = info.offset.x
-
-    let newIndex = activeIndex
-
-    if (offset < -threshold || velocity < -500) {
-      newIndex = Math.min(activeIndex + 1, casos.length - 1)
-    } else if (offset > threshold || velocity > 500) {
-      newIndex = Math.max(activeIndex - 1, 0)
-    }
-
-    setActiveIndex(newIndex)
-    animate(dragX, -newIndex * SLIDE_WIDTH, { type: 'spring', stiffness: 300, damping: 30 })
-  }
-
-  const goToSlide = (index: number) => {
+  const goToSlide = useCallback((index: number) => {
     setActiveIndex(index)
-    animate(dragX, -index * SLIDE_WIDTH, { type: 'spring', stiffness: 300, damping: 30 })
-  }
+  }, [])
+
+  // Auto-advance
+  useEffect(() => {
+    if (!isInView) return
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % videos.length)
+    }, AUTO_ADVANCE_MS)
+    return () => clearInterval(timer)
+  }, [isInView])
+
+  // Play/pause videos based on active index
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return
+      if (i === activeIndex) {
+        video.currentTime = 0
+        video.play().catch(() => {})
+      } else {
+        video.pause()
+      }
+    })
+  }, [activeIndex])
 
   return (
     <section id="trabajo" className="py-32 px-6 bg-[#1a1a1a] relative overflow-hidden" ref={ref}>
@@ -79,7 +62,7 @@ export default function Casos() {
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
           <div>
             <motion.div
               initial={{ opacity: 0 }}
@@ -123,151 +106,54 @@ export default function Casos() {
           </motion.div>
         </div>
 
-        {/* Descripcion */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        {/* iPhone Mockup centrado con videos */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-white/50 text-base max-w-xl mb-16"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col items-center"
         >
-          Cada proyecto responde a una necesidad distinta, pero todos parten del mismo punto: pensar la comunicacion antes de producirla.
-        </motion.p>
-
-        {/* Layout de 2 columnas */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Columna izquierda: Stats Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="space-y-4"
-          >
-            {casos.map((caso, i) => (
-              <motion.button
-                key={caso.id}
-                onClick={() => goToSlide(i)}
-                className={`w-full text-left p-6 rounded-lg transition-all duration-300 border ${
-                  activeIndex === i
-                    ? 'bg-white/10 border-[#c81e1e]/50'
-                    : 'bg-white/5 border-transparent hover:bg-white/8'
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex-1">
-                    <span className="text-[#c81e1e] font-mono text-xs uppercase tracking-wider">
-                      {caso.category}
-                    </span>
-                    <h3 className="font-sans text-white text-lg font-light mt-2 mb-3">
-                      {caso.title}
-                    </h3>
-                  </div>
-                  <div className="text-right">
-                    <span className="font-sans text-4xl md:text-5xl font-light text-white block leading-none">
-                      {caso.result}
-                    </span>
-                    <span className="text-white/50 font-mono text-xs uppercase tracking-wider mt-1 block">
-                      {caso.resultLabel}
-                    </span>
-                  </div>
-                </div>
-                {/* Indicador activo */}
+          <IPhoneMockup className="w-72 md:w-80 lg:w-[22rem]">
+            <div className="w-full h-full relative bg-black">
+              <AnimatePresence mode="wait">
                 <motion.div
-                  className="h-0.5 bg-[#c81e1e] mt-4 origin-left"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: activeIndex === i ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.button>
-            ))}
-          </motion.div>
-
-          {/* Columna derecha: iPhone Mockup con Carousel */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col items-center"
-          >
-            <IPhoneMockup className="w-64 md:w-72 lg:w-80">
-              {/* Carousel container */}
-              <div className="w-full h-full overflow-hidden bg-gradient-to-b from-[#0d0d0d] to-[#1a1a1a]">
-                <motion.div
-                  className="flex h-full"
-                  style={{ x: dragX.get() + '%' }}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.1}
-                  onDragEnd={handleDragEnd}
+                  key={activeIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0"
                 >
-                  {casos.map((caso) => (
-                    <div
-                      key={caso.id}
-                      className="min-w-full h-full flex flex-col p-6 pt-16"
-                      style={{ touchAction: 'pan-y' }}
-                    >
-                      {/* Header del slide */}
-                      <div className="mb-auto">
-                        <span
-                          className="inline-block px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider mb-4"
-                          style={{ backgroundColor: caso.color + '20', color: caso.color }}
-                        >
-                          {caso.category}
-                        </span>
-                        <h4 className="text-white text-lg font-light leading-tight">
-                          {caso.title}
-                        </h4>
-                      </div>
-
-                      {/* Resultado destacado */}
-                      <div className="my-8 text-center">
-                        <span
-                          className="text-6xl font-light block"
-                          style={{ color: caso.color }}
-                        >
-                          {caso.result}
-                        </span>
-                        <span className="text-white/50 text-xs uppercase tracking-wider mt-2 block">
-                          {caso.resultLabel}
-                        </span>
-                      </div>
-
-                      {/* Descripcion */}
-                      <p className="text-white/60 text-sm leading-relaxed mb-8">
-                        {caso.description}
-                      </p>
-
-                      {/* CTA */}
-                      <button
-                        className="w-full py-3 rounded-full text-white text-sm font-medium transition-opacity hover:opacity-80"
-                        style={{ backgroundColor: caso.color }}
-                      >
-                        Ver caso completo
-                      </button>
-                    </div>
-                  ))}
+                  <video
+                    ref={(el) => { videoRefs.current[activeIndex] = el }}
+                    src={videos[activeIndex]}
+                    muted
+                    playsInline
+                    loop
+                    autoPlay
+                    className="w-full h-full object-cover"
+                  />
                 </motion.div>
-              </div>
-            </IPhoneMockup>
-
-            {/* Indicadores de pagina */}
-            <div className="flex gap-2 mt-6">
-              {casos.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goToSlide(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    activeIndex === i
-                      ? 'bg-[#c81e1e] w-6'
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                  aria-label={`Ir a caso ${i + 1}`}
-                />
-              ))}
+              </AnimatePresence>
             </div>
-          </motion.div>
-        </div>
+          </IPhoneMockup>
+
+          {/* Indicadores */}
+          <div className="flex gap-2 mt-8">
+            {videos.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === i
+                    ? 'bg-[#c81e1e] w-6'
+                    : 'bg-white/30 hover:bg-white/50 w-2'
+                }`}
+                aria-label={`Ver video ${i + 1}`}
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
